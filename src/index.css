@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.SideLi{
+    padding: 12px 20px;
+    box-shadow: 0 0 25px rgba(193, 234, 250, 0.767);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.SideLi:hover{
+    box-shadow: 0 0 45px rgba(55, 179, 228, 0.767);
+}
+
+.SideH5{
+    font-family: roboto;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin: 15px 0 0 0;
+}
+
+
+.Admin{
+    height: 60px;
+    width: 55px;
+}
+
+.adminImg{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.admintext1{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(37, 37, 102);
+}
+.admintext2{
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(130, 143, 190);
+}
+
+.hobaspan{
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(80, 89, 224);
+}
+.hobaHea1{
+    font-family: roboto;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 16px 0;
+}
+.hobaPera{
+    font-family: roboto;
+    font-size: 12;
+    font-weight: 400;
+    width: 400px;
+    line-height: 25px;
+}
+
+
+.hobannar{
+    background-image: url(./assets/bannar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+   
+}
+
+
+.frcardHea5{
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(9, 19, 107);
+}
+.frcardHea1{
+    font-family: roboto;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 12px 0 0px;
+}
+.frcardSpan{
+    font-family: roboto;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(134, 128, 128);
+}
+
+
+.overview{
+    padding: 20px 0 0 30px;
+    font-family: roboto;
+    font-size: 35px;
+}
+
+
+.firststu{
+    font-family: roboto;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px 0 20px 8px;
+}
+
+.firststuH3{
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 400;
+    width: 150px;
+}
+
+.addbtn{
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px 20px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgba(188, 210, 250, 0.575);
+    color: black;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+
+
+.stuFoHea1{
+    font-family: roboto;
+    font-size: 35px;
+    font-weight: 500;
+    color: rgba(3, 3, 116, 0.678);
+    text-align: center;
+}
+
+.stuFobtn{
+    padding: 12px 25px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-family: roboto;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+   background-color: rgba(208, 234, 255, 0.555);
+}
+
+
+.allstudent{
+    font-family: raleway;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 8px;
+    margin-bottom: 20px;
+}
+
+.deletebtn{
+    position: absolute;
+    padding: 8px 12px;
+    background-color: rgba(197, 194, 190, 0.521);
+    border-radius: 6px;
+    display: none;
+    top: 50%;
+    right: 0.5%;
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+.editbtn{
+    position: absolute;
+    padding: 8px 12px;
+    background-color: rgba(197, 194, 190, 0.521);
+    border-radius: 6px;
+    display: none;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+
+.studentTable:hover .deletebtn{
+    display: inline-block;
+}
+.studentTable:hover .editbtn{
+    display: inline-block;
+}
