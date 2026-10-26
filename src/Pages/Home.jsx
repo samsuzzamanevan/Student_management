@@ -8,7 +8,7 @@ import Peragraph from '../Layouts/Peragraph'
 import Span from '../Layouts/Span'
 import FirstCard from "../components/FirstCard";
 import { IoSchool } from "react-icons/io5";
-import {Data, TeacherData} from '../UseContext'
+import { Data, TeacherData } from '../UseContext'
 
 
 
@@ -21,6 +21,16 @@ function Home() {
 
   let data = useContext(Data)
   let teacherData = useContext(TeacherData)
+
+
+  let teacherMale = teacherData.filter((items,index)=>{
+    return items.TeacherGender == 'male'
+  })
+
+  let teacherFemale = teacherData.filter((items,index)=>{
+    return items.TeacherGender == 'female'
+  })
+
 
   let male = data.filter((items, index) => {
     return items.Gender == 'male'
@@ -59,14 +69,13 @@ function Home() {
           </div>
         </div>
 
-        <div>
-
-          <Heading1 Hea1text='Overview' className='overview' />
-          <div style={{ display: 'flex', columnGap: '15px', padding: '10px 20px 20px', width: '105.5%' }}>
+        <div style={{  padding: '20px ', margin: '10px 0 10px 50px', borderRadius: '12px', boxShadow: '0 0 25px rgba(165, 174, 248, 0.2)' }}>
+          <Heading1 Hea1text='Students' className='overview' />
+          <div style={{ display: 'flex', columnGap: '55px', padding: '10px 20px 20px', justifyContent:'center' }}>
             <FirstCard text1=' Students' text2={data.length} text3='Total Student' type='A' />
             <FirstCard text1='Male Students' text2={male.length} text3='Total Male Student' type='B' />
             <FirstCard text1='Female Students' text2={female.length} text3='Total Female Student' type='C' />
-            <FirstCard text1='Teachers' text2={teacherData.length} text3='Total Teachers' type='D' />
+
           </div>
         </div>
 
@@ -74,32 +83,14 @@ function Home() {
 
 
 
-        <div style={{ width: '100%', padding: '20px ', margin: '10px 2%', borderRadius: '12px', boxShadow: '0 0 25px rgba(165, 174, 248, 0.2)' }}>
-          <Heading3 Hea3text='Student of the year' className='firststu' />
-          <div style={{ background: 'rgba(216, 236, 250, 0.67)', height: '40px', width: '100%', display: 'flex', justifyContent: 'space-around', padding: '6px 0', alignItems: 'center' }}>
-            <Heading3 Hea3text='No' className='firststuH3' />
-            <Heading3 Hea3text='Id' className='firststuH3' />
-            <Heading3 Hea3text='Name' className='firststuH3' />
-            <Heading3 Hea3text='Class' className='firststuH3' />
-            <Heading3 Hea3text='Phone' className='firststuH3' />
-            <Heading3 Hea3text='Address' className='firststuH3' />
+        <div style={{  padding: '20px 0', margin: '10px 0 10px 50px', borderRadius: '12px', boxShadow: '0 0 25px rgba(165, 174, 248, 0.2)' }}>
+          <Heading3 Hea3text='Teachers' className='firststu' />
+          <div style={{ display: 'flex', columnGap: '55px', padding: '10px 20px 20px' ,justifyContent:'center'}}>
+          <FirstCard text1='Teachers' text2={teacherData.length} text3='Total Teachers' type='D' />
+          <FirstCard text1='Male Teachers' text2={teacherMale.length} text3='Total Male Teachers' type='B' />
+            <FirstCard text1='Female Teachers' text2={teacherFemale.length} text3='Total Female Teachers' type='C' />
           </div>
-          <div style={{ background: 'rgba(224, 232, 236, 0.53)', height: '40px', width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '6px 0', borderTop: '1px solid rgba(233, 222, 222, 0.61)' }}>
-            <Heading3 Hea3text='01' className='firststuH3' />
-            <Heading3 Hea3text='1250' className='firststuH3' />
-            <Heading3 Hea3text='Md.Evan' className='firststuH3' />
-            <Heading3 Hea3text='11' className='firststuH3' />
-            <Heading3 Hea3text='01839056885' className='firststuH3' />
-            <Heading3 Hea3text='Dhaka' className='firststuH3' />
-          </div>
-          <div style={{ background: 'rgba(227, 235, 240, 0.53)', height: '40px', width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '6px 0', borderTop: '1px solid rgba(226, 213, 213, 0.61)' }}>
-            <Heading3 Hea3text='01' className='firststuH3' />
-            <Heading3 Hea3text='1250' className='firststuH3' />
-            <Heading3 Hea3text='Md.Samsuzzaman Evan' className='firststuH3' />
-            <Heading3 Hea3text='11' className='firststuH3' />
-            <Heading3 Hea3text='01839056885' className='firststuH3' />
-            <Heading3 Hea3text='Dhaka' className='firststuH3' />
-          </div>
+
         </div>
 
 

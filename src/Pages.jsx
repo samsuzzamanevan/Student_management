@@ -74,6 +74,7 @@ function Pages() {
     let [teacherName, setTeacherName] = useState('')
     let [teacherPhone, setTeacherPhone] = useState('')
     let [teacherAddress, setTeacherAddress] = useState('')
+    let [teacherGender, setTeacherGender] = useState('')
 
 
 
@@ -84,7 +85,8 @@ function Pages() {
                 TeacherID: teacherId,
                 TeacherName: teacherName,
                 TeacherPhone: teacherPhone,
-                TeacherAddress: teacherAddress
+                TeacherAddress: teacherAddress,
+                TeacherGender: teacherGender
             }]
             return newvalue
         })
@@ -93,18 +95,80 @@ function Pages() {
         setTeacherName('')
         setTeacherId('')
         setTeacherPhone('')
+        setTeacherGender('')
 
     }
 
 
 
+    function deleteproccess(id) {
+        setInfo((oldvalue) => {
+            return oldvalue.filter((items, index) => {
+                return id !== items.Id
+            })
+        })
+    }
+
+
+
+    function Update(i) {
+        setInfo((oldvalue) => {
+         return   oldvalue.map((itmes, index) => {
+                if (i === index) {
+                    return {
+                        ...itmes,
+                        Name: name,
+                        FName: Fname,
+                        Id: id,
+                        Phone: phone,
+                        Gender: gender,
+                        Address: address,
+                        Sreny: sreny
+                    }
+                }
+                return itmes
+            })
+        }
+        )
+        setName('')
+        setFname('')
+        setId('')
+        setPhone('')
+        setAddress('')
+        setSreny('')
+    }
+
+
+    function editProccess(id) {
+        setName(() => {
+            return info[id].Name
+        })
+        setFname(() => {
+            return info[id].FName
+        })
+        setId(() => {
+            return info[id].Id
+        })
+        setPhone(() => {
+            return info[id].Phone
+        })
+        setGender(() => {
+            return info[id].Gender
+        })
+        setAddress(() => {
+            return info[id].Address
+        })
+        setSreny(() => {
+            return info[id].Sreny
+        })
+    }
 
 
 
 
     let pages = [<Home />,
-    <Student name={setName} id={setId} phone={setPhone} fname={setFname} address={setAddress} sreny={setSreny} studentProccess={studentProccess} Name={name} FName={Fname} Id={id} Phone={phone} Address={address} Sreny={sreny} gender={setGender} Gender={gender} />,
-    <Teacher teacherProccess={teacherProccess} setTeacherId={setTeacherId} teacherId={teacherId} setTeacherName={setTeacherName} teacherName={teacherName} setTeacherPhone={setTeacherPhone} teacherPhone={teacherPhone} setTeacherAddress={setTeacherAddress} teacherAddress={teacherAddress} />,
+    <Student name={setName} id={setId} phone={setPhone} fname={setFname} address={setAddress} sreny={setSreny} studentProccess={studentProccess} Name={name} FName={Fname} Id={id} Phone={phone} Address={address} Sreny={sreny} gender={setGender} Gender={gender} deleteproccess={deleteproccess} editProccess={editProccess} Update={Update} />,
+    <Teacher teacherProccess={teacherProccess} setTeacherId={setTeacherId} teacherId={teacherId} setTeacherName={setTeacherName} teacherName={teacherName} setTeacherPhone={setTeacherPhone} teacherPhone={teacherPhone} setTeacherAddress={setTeacherAddress} teacherAddress={teacherAddress} teacherGender={teacherGender} setTeacherGender={setTeacherGender} />,
     <Settings />]
     let [page, setPage] = useState(0)
 

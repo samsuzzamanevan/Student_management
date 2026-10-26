@@ -2,7 +2,7 @@ import React from 'react'
 import Heading1 from '../Layouts/Heading1'
 import Button from '../Layouts/Button'
 
-function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, Id, Name, FName, Sreny, Address, Phone, gender, Gender }) {
+function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, Id, Name, FName, Sreny, Address, Phone, gender, Gender,index,Update,Num }) {
 
     return (
         <>
@@ -25,7 +25,7 @@ function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, 
 
                     <div>
                         <label htmlFor="gender" style={{ fontSize: '16px', fontFamily: 'roboto', width: '130px', display: 'inline-block' }}>Gender : </label>
-                        <select name="" id="gender" style={{ fontSize: '16px', fontFamily: 'roboto', padding: '12px 8px 12px 10px', width: '370px', border: 'none', outline: 'none', boxShadow: '0 0 15px rgba(146, 171, 207, 0.68)', borderRadius: '10px' }} onChange={(e) => gender(e.target.value)}>
+                        <select name="" id="gender" style={{ fontSize: '16px', fontFamily: 'roboto', padding: '12px 8px 12px 10px', width: '370px', border: 'none', outline: 'none', boxShadow: '0 0 15px rgba(146, 171, 207, 0.68)', borderRadius: '10px' }} onChange={(e) => gender(e.target.value)} value={Gender}>
                             <option value="">Gender</option>
                             <option value={`male`} >Male</option>
                             <option value={`female`}>Female</option>
@@ -54,8 +54,21 @@ function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, 
                         <input type="number" name='name' id='name' placeholder='Class' style={{ fontSize: '16px', fontFamily: 'roboto', padding: '12px 8px 12px 10px', width: '350px', border: 'none', outline: 'none', boxShadow: '0 0 15px rgba(146, 171, 207, 0.68)', borderRadius: '10px' }} onChange={(e) => sreny(e.target.value)} value={Sreny} required />
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '18px' }}>
-                        <Button btnText='Back' className='stuFobtn' onclick={() => add(true)} />
-                        <Button btnText='Save' className='stuFobtn' onclick={() => studentProccess()} />
+                        <Button btnText='Back' className='stuFobtn' onclick={() => {
+                            add(true)
+                            id('')    
+                            fname('')    
+                            name('')    
+                            phone('')    
+                            address('')    
+                            sreny('')    
+                        }
+                            } />
+                        {
+                        Num === 0
+                        ?<Button btnText='Save' className='stuFobtn' onclick={() => studentProccess()} />
+                        :<Button btnText='Update' className='stuFobtn' onclick={() => Update(index)} />
+                        }
                     </div>
                 </div>
             </div>

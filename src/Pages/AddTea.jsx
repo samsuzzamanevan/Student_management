@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../Layouts/Button'
 import Heading1 from '../Layouts/Heading1'
 
-function AddTea({add,teacherProccess,setTeacherAddress,teacherAddress,setTeacherPhone,teacherPhone,setTeacherName,teacherName,setTeacherId,teacherId}) {
+function AddTea({add,teacherProccess,setTeacherAddress,teacherAddress,setTeacherPhone,teacherPhone,setTeacherName,teacherName,setTeacherId,teacherId,setTeacherGender,teacherGender}) {
   return (
     <>
                   <div style={{ width: '550px', boxShadow: '0 0 15px rgba(182, 222, 245, 0.75)', margin: '50px auto', padding: '50px', borderRadius: '12px' }}>
@@ -17,7 +17,14 @@ function AddTea({add,teacherProccess,setTeacherAddress,teacherAddress,setTeacher
 
                     
 
-
+                    <div>
+                        <label htmlFor="gender" style={{ fontSize: '16px', fontFamily: 'roboto', width: '130px', display: 'inline-block' }}>Gender : </label>
+                        <select name="" id="gender" style={{ fontSize: '16px', fontFamily: 'roboto', padding: '12px 8px 12px 10px', width: '370px', border: 'none', outline: 'none', boxShadow: '0 0 15px rgba(146, 171, 207, 0.68)', borderRadius: '10px' }} onChange={(e)=> setTeacherGender(e.target.value)} >
+                            <option value="">Gender</option>
+                            <option value={`male`} >Male</option>
+                            <option value={`female`}>Female</option>
+                        </select>
+                    </div>
 
 
 

@@ -4,12 +4,12 @@ import Button from '../Layouts/Button'
 import AddTea from './AddTea'
 import { TeacherData } from '../UseContext'
 
-function Teacher({ teacherProccess, setTeacherAddress, teacherAddress, setTeacherPhone, teacherPhone, setTeacherName, teacherName, setTeacherId, teacherId }) {
+function Teacher({ teacherProccess, setTeacherAddress, teacherAddress, setTeacherPhone, teacherPhone, setTeacherName, teacherName, setTeacherId, teacherId,teacherGender,setTeacherGender }) {
 
   let [add, setAdd] = useState(true)
 
   let teacherData = useContext(TeacherData)
-  console.log(teacherData)
+ 
 
 
   return (
@@ -76,6 +76,8 @@ function Teacher({ teacherProccess, setTeacherAddress, teacherAddress, setTeache
               teacherName={teacherName}
               setTeacherId={setTeacherId}
               teacherId={teacherId}
+              teacherGender={teacherGender}
+              setTeacherGender={setTeacherGender}
             />
 
         }
