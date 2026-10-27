@@ -60,10 +60,10 @@ function Pages() {
 
     function editUpdate(){
         setAdmin(()=>{
-            return main[0].Admin
+            return main[0]?.Admin || ''
         })
         setImage(()=>{
-            return main[0].Image
+            return main[0]?.Image || ''
         })
     }
 
