@@ -2,7 +2,7 @@ import React from 'react'
 import Heading1 from '../Layouts/Heading1'
 import Button from '../Layouts/Button'
 
-function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, Id, Name, FName, Sreny, Address, Phone, gender, Gender,index,Update,Num }) {
+function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, Id, Name, FName, Sreny, Address, Phone, gender, Gender,index,Update,Num,setNum }) {
 
     return (
         <>
@@ -61,13 +61,17 @@ function AddStu({ add, studentProccess, sreny, address, phone, name, fname, id, 
                             name('')    
                             phone('')    
                             address('')    
-                            sreny('')    
+                            sreny('')  
+                            setNum(0)  
                         }
                             } />
                         {
                         Num === 0
                         ?<Button btnText='Save' className='stuFobtn' onclick={() => studentProccess()} />
-                        :<Button btnText='Update' className='stuFobtn' onclick={() => Update(index)} />
+                        :<Button btnText='Update' className='stuFobtn' onclick={() => {
+                            Update(index)
+                            setNum(0)
+                        }} />
                         }
                     </div>
                 </div>

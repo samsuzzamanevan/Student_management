@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import Admin from '../assets/Admin.png'
 import Images from '../Layouts/Images'
 import Heading5 from '../Layouts/Heading5'
 import Heading1 from '../Layouts/Heading1'
@@ -8,7 +7,7 @@ import Peragraph from '../Layouts/Peragraph'
 import Span from '../Layouts/Span'
 import FirstCard from "../components/FirstCard";
 import { IoSchool } from "react-icons/io5";
-import { Data, TeacherData } from '../UseContext'
+import { Data, Setting, TeacherData } from '../UseContext'
 
 
 
@@ -21,6 +20,7 @@ function Home() {
 
   let data = useContext(Data)
   let teacherData = useContext(TeacherData)
+  let main = useContext(Setting)
 
 
   let teacherMale = teacherData.filter((items,index)=>{
@@ -52,10 +52,10 @@ function Home() {
 
           <div style={{ display: 'flex', columnGap: '15px', alignItems: 'center' }}>
             <div className='Admin'>
-              <Images src={Admin} className='adminImg' />
+              <Images src={main[0].Image} className='adminImg' />
             </div>
             <div style={{ fontFamily: 'roboto' }}>
-              <Heading5 Hea5text='Md.Evan' className='admintext1' />
+              <Heading5 Hea5text={main[0].Admin} className='admintext1' />
               <Peragraph pText='Admin' className='admintext2' />
             </div>
           </div>

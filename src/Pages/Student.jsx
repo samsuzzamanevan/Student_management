@@ -185,7 +185,7 @@ export default function Student({ studentProccess, sreny, address, phone, name, 
               </div>
               <Button btnText='+Add' className='addbtn' onclick={() => setAdd(false)} />
             </>
-            : <AddStu add={setAdd} name={name} phone={phone} id={id} address={address} sreny={sreny} studentProccess={studentProccess} Name={Name} Id={Id} Phone={Phone} Address={Address} Sreny={Sreny} fname={fname} FName={FName} gender={gender} Gender={Gender} Update= {Update} index={index} Num={Num}/>
+            : <AddStu add={setAdd} name={name} phone={phone} id={id} address={address} sreny={sreny} studentProccess={studentProccess} Name={Name} Id={Id} Phone={Phone} Address={Address} Sreny={Sreny} fname={fname} FName={FName} gender={gender} Gender={Gender} Update= {Update} index={index} Num={Num} setNum = {setNum}/>
 
         }
 
