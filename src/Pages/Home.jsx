@@ -52,10 +52,10 @@ function Home() {
 
           <div style={{ display: 'flex', columnGap: '15px', alignItems: 'center' }}>
             <div className='Admin'>
-              <Images src={main[0].Image} className='adminImg' />
+              <Images src={main[0]?.Image || ''} className='adminImg' />
             </div>
             <div style={{ fontFamily: 'roboto' }}>
-              <Heading5 Hea5text={main[0].Admin} className='admintext1' />
+              <Heading5 Hea5text={main[0]?.Admin || ''} className='admintext1' />
               <Peragraph pText='Admin' className='admintext2' />
             </div>
           </div>

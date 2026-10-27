@@ -32,11 +32,11 @@ export default function Settings({AdminPro,setAdmin,setImage,admin,image,editUpd
                 <div>
                   <div style={{ display: 'flex', columnGap: '12px', alignItems: 'center' }}>
                     <div style={{ width: '60px', height: '60px',  }}>
-                      <img src={main[0].Image} alt="" style={{borderRadius: '100%',height:'100%', width:'100%', objectFit:'cover', objectPosition:'center Top'}}/>
+                      <img src={main[0]?.Image || ''} alt="" style={{borderRadius: '100%',height:'100%', width:'100%', objectFit:'cover', objectPosition:'center Top'}}/>
                     </div>
                     <div>
                       <h4 style={{ fontFamily: 'roboto', fontSize: '20px', fontWeight: '500', marginBottom: '5px' }}>Admin</h4>
-                      <p style={{ fontFamily: 'roboto', fontSize: '16px', fontWeight: '400' }}>{main[0].Admin}</p>
+                      <p style={{ fontFamily: 'roboto', fontSize: '16px', fontWeight: '400' }}>{main[0]?.Admin || ''}</p>
                     </div>
                   </div>
                 </div>
