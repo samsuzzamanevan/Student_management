@@ -129,7 +129,7 @@ function Pages() {
     )
 
     useEffect(() => {
-        localStorage.setItem('teacher', (JSON.stringify(teacher)))
+        localStorage.setItem('teacher', JSON.stringify(teacher))
     }, [teacher])
 
     let [teacherId, setTeacherId] = useState('')
@@ -275,8 +275,8 @@ function Pages() {
                         TeacherName: teacherName,
                         TeacherID: teacherId
                     }
-                    return itmes
                 }
+                return itmes
             })
             return newvalue
         }

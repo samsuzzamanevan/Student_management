@@ -12,6 +12,8 @@ function Teacher({ teacherProccess, setTeacherAddress, teacherAddress, setTeache
   let [add, setAdd] = useState(true)
 
   let teacherData = useContext(TeacherData)
+  console.log("Teacher Data:", teacherData)
+console.log("Is Array:", Array.isArray(teacherData))
 
   let [searchid, setSearchid] = useState('')
   let [searchname, setSearchname] = useState('')
